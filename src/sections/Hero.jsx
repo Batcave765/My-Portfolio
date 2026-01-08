@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Mail, Github, Linkedin, ExternalLink } from 'lucide-react';
+import Portrait1 from '../assets/Portrait1.jpg';
 
 const Hero = () => {
     return (
@@ -55,7 +56,7 @@ const Hero = () => {
                             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 blur-2xl opacity-30 animate-pulse" />
                             <div className="relative w-full h-full rounded-full border-2 border-cyan-500/30 overflow-hidden bg-gray-800 flex items-center justify-center">
                                 <img
-                                    src="src\assets\Portrait1.jpg"
+                                    src={Portrait1}
                                     alt="Sriram M Portrait"
                                     className="w-full h-full object-cover"
                                 />
