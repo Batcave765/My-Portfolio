@@ -1,78 +1,90 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown } from 'lucide-react';
+import { MapPin, Mail, Github, Linkedin, ExternalLink } from 'lucide-react';
 
 const Hero = () => {
     return (
-        <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gray-900">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900 py-20">
             {/* Background Gradient Blobs */}
-            {/* Background Gradient Blobs */}
-            <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-purple-600/30 rounded-full blur-[120px] animate-pulse" />
-            <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-cyan-600/30 rounded-full blur-[120px] animate-pulse delay-1000" />
-            <div className="absolute top-[40%] left-[30%] w-[300px] h-[300px] bg-blue-500/20 rounded-full blur-[100px] animate-bounce duration-[10000ms]" />
+            <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] animate-pulse" />
+            <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-cyan-600/20 rounded-full blur-[120px] animate-pulse delay-1000" />
 
-            {/* Floating Particles */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {[...Array(20)].map((_, i) => (
+            <div className="container mx-auto px-6 relative z-10">
+                <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+                    {/* Left Column: Header & Contact */}
                     <motion.div
-                        key={i}
-                        className="absolute bg-white/10 rounded-full"
-                        initial={{
-                            x: Math.random() * window.innerWidth,
-                            y: Math.random() * window.innerHeight,
-                            scale: Math.random() * 0.5 + 0.5,
-                        }}
-                        animate={{
-                            y: [null, Math.random() * -100],
-                            opacity: [0, 0.5, 0],
-                        }}
-                        transition={{
-                            duration: Math.random() * 5 + 5,
-                            repeat: Infinity,
-                            ease: "linear",
-                            delay: Math.random() * 5,
-                        }}
-                        style={{
-                            width: Math.random() * 10 + 5 + 'px',
-                            height: Math.random() * 10 + 5 + 'px',
-                        }}
-                    />
-                ))}
-            </div>
-
-            <div className="container mx-auto px-6 relative z-10 text-center">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                >
-                    <h2 className="text-cyan-400 font-medium tracking-widest mb-4 text-sm md:text-lg uppercase">
-                        Hello, I'm
-                    </h2>
-                    <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 tracking-tight">
-                        Sriram M
-                    </h1>
-                    <div className="h-1 w-16 md:w-24 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto mb-6 md:mb-8 rounded-full" />
-                    <p className="text-lg md:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed px-4">
-                        <span className="text-white font-semibold">Performance Engineer</span> at Cognizant.
-                        <br className="hidden md:block" />
-                        Optimizing digital experiences starting Feb 2025.
-                    </p>
-                </motion.div>
-
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1, duration: 1 }}
-                    className="mt-12"
-                >
-                    <a
-                        href="#about"
-                        className="inline-flex items-center gap-2 px-8 py-3 border border-cyan-500/30 rounded-full text-cyan-400 hover:bg-cyan-500/10 transition-all duration-300 group"
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8 }}
                     >
-                        Explore My Work
-                        <ArrowDown size={18} className="group-hover:translate-y-1 transition-transform" />
-                    </a>
+                        <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight">
+                            Sriram M <span className="text-cyan-400">✨</span>
+                        </h1>
+                        <h2 className="text-2xl md:text-3xl font-medium text-gray-300 mb-8 flex items-center gap-3">
+                            Performance Engineer <span className="text-2xl">👨‍💻</span>
+                        </h2>
+
+                        <div className="flex flex-col gap-4 text-gray-400 mb-8">
+                            <div className="flex items-center gap-3 hover:text-cyan-400 transition-colors">
+                                <MapPin className="w-5 h-5 text-purple-500" />
+                                <span>Coimbatore, India</span>
+                            </div>
+                            <div className="flex items-center gap-3 hover:text-cyan-400 transition-colors">
+                                <Mail className="w-5 h-5 text-gray-100" />
+                                <a href="mailto:msriram765@gmail.com" className="hover:underline">msriram765@gmail.com</a>
+                            </div>
+                            <div className="flex items-center gap-3 hover:text-cyan-400 transition-colors">
+                                <Github className="w-5 h-5 text-yellow-500" />
+                                <a href="https://github.com/Batcave765" target="_blank" rel="noopener noreferrer" className="hover:underline">GitHub</a>
+                            </div>
+                            <div className="flex items-center gap-3 hover:text-cyan-400 transition-colors">
+                                <Linkedin className="w-5 h-5 text-blue-500" />
+                                <a href="https://www.linkedin.com/in/sriram-m765/" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn</a>
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    {/* Right Column: Profile Image */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8 }}
+                        className="flex justify-center md:justify-end"
+                    >
+                        <div className="relative w-64 h-64 md:w-80 md:h-80">
+                            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 blur-2xl opacity-30 animate-pulse" />
+                            <div className="relative w-full h-full rounded-full border-2 border-cyan-500/30 overflow-hidden bg-gray-800 flex items-center justify-center">
+                                <img
+                                    src="src\assets\Portrait1.jpg"
+                                    alt="Sriram M Portrait"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
+
+                <motion.div
+                    id="about"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4, duration: 0.8 }}
+                    className="relative"
+                >
+                    <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl border-l-4 border-cyan-500 shadow-lg">
+
+                        <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                            <span className="text-2xl">🚀</span> About Me
+                        </h3>
+                        <p className="text-gray-300 leading-relaxed mb-4">
+                            Passionate about building <span className="text-cyan-400 font-semibold">high-performance</span> web applications.
+                            I am a dedicated Software Engineer focused on optimizing digital experiences and ensuring system reliability at scale.
+                        </p>
+                        <p className="text-gray-300 leading-relaxed">
+                            Currently working at <strong>Cognizant</strong> as a Performance Engineer (starting Feb 2025).
+                            My holistic approach combines technical expertise with creative problem-solving to develop innovative and practical solutions.
+                        </p>
+                    </div>
                 </motion.div>
             </div>
         </section>

@@ -13,8 +13,7 @@ const Experience = () => {
             period: 'Feb 2025 - Present',
             description: [
                 'Upcoming role focused on optimizing application performance and scalability.',
-                'Will be working with cross-functional teams to identify and resolve performance bottlenecks.',
-                'Implementing best practices for high-performance software architecture.',
+                'Will be working with cross-functional teams to identify and resolve performance bottlenecks with clients like Macy\'s.',
             ],
             active: true,
         },
@@ -28,7 +27,6 @@ const Experience = () => {
             description: [
                 'Assisted in UI/UX design processes, contributing to wireframing and prototyping.',
                 'Implemented front-end features using React.js, focusing on component reusability and state management.',
-                'Performed unit and integration testing to identify and resolve software defects.',
             ],
             active: false,
         },
@@ -77,7 +75,7 @@ const Experience = () => {
                                             </h3>
                                             {exp.active && (
                                                 <span className="px-2 py-1 text-xs font-semibold bg-purple-500/20 text-purple-300 rounded-full animate-pulse">
-                                                    Incoming
+                                                    Present
                                                 </span>
                                             )}
                                         </div>
